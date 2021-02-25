@@ -1,0 +1,14 @@
+sort by time to reach destination (irrespect of the wait)
+take the least one.
+and make it reach to the dest.(can delay if less than the duration.)
+
+for every
+Node: cars present on it
+what is the next node.
+
+1,2,3  - 1
+
+
+Question?
+
+find out all the 
