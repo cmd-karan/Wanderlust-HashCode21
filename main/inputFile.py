@@ -1,7 +1,7 @@
 from collections import defaultdict
 #PATH_INPUT = '/Users/hardikmehta/Documents/hash_code/Wanderlust-HashCode21/main/'
+
 input_file = open('test_input.txt','r')
-output_file = open('result.txt','w')
 
 line = input_file.readline().split()
 simulationTime = int(line[0])
@@ -24,28 +24,27 @@ class Car:
 
 
 var = 0
-dic_street = {}
+nodeToEdge = {}
 # name -> (start, end, weight)
-dic_rev_street = {}
-Graph = defaultdict()
+edgeToNode = {}
+graph = defaultdict()
 for n in range(0,intersectionCount):
-    Graph[n] = []
-    
+    graph[n] = []
+
 while var<streetCount:
     line = input_file.readline().split()
-    dic_street[line[2]] = ( int(line[0]), int(line[1]), int(line[3] ) )
-    dic_rev_street[ (int(line[0]), int(line[1]) ) ] = line[2]
-    Graph[int(line[1])].append(int(line[0]))
+    nodeToEdge[line[2]] = ( int(line[0]), int(line[1]), int(line[3] ) )
+    edgeToNode[ (int(line[0]), int(line[1]) ) ] = line[2]
+    graph[int(line[1])].append(int(line[0]))
     var += 1
 
 var = 0
-cars = []
+carIDMap = []
 # carID -> Car Object
 while var<numCars:
     line = input_file.readline().split()
     cur = Car(line[1:])
-    cur.setIntersections(dic_street)
-    cars.append(cur) 
+    cur.setIntersections(nodeToEdge)
+    carIDMap.append(cur) 
     var += 1
 
-print(Graph)
