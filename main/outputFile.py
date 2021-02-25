@@ -8,7 +8,7 @@ class OutputFile:
         output_file.write(content)
 
     def streetWeight(self):
-        return '1'
+        return '2'
     def getOutputv1(self, simulationTime, intersectionCount, streetCount, scorePerCar, graph, edgeToNode, nodeToEdge, carIDMap):
         """
         Node 
