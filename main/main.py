@@ -17,6 +17,8 @@ and save it
 multi - score destination - (with weighted edges and waiting is changed as per our requirement)
 """
 import os
+import inputFile
+import outputFile
 
 if __name__=="__main__":
     print("main called maybe")
@@ -27,8 +29,8 @@ if __name__=="__main__":
     fileNames = list(os.listdir(inputDir))
     for fileName in fileNames:
         path = os.path.join(inputDir, fileName)
-        simulationTime, intersectionCount, streetCount, scorePerCar, graph, edgeToNode, nodeToEdge, carIDMap = inputFile.InputFile.getInput(path)
-        logic.Logic.computation(simulationTime, intersectionCount, streetCount, scorePerCar, graph, edgeToNode, nodeToEdge, carIDMap)
+        simulationTime, intersectionCount, streetCount, scorePerCar, graph, edgeToNode, nodeToEdge, carIDMap = inputFile.getInput()
+        #logic.Logic.computation(simulationTime, intersectionCount, streetCount, scorePerCar, graph, edgeToNode, nodeToEdge, carIDMap)
         s = outputFile.OutputFile.getOutput(simulationTime, intersectionCount, streetCount, scorePerCar, graph, edgeToNode, nodeToEdge, carIDMap)
         outputFileName = os.path.join(outputDir,fileName+"_output.txt")
         with open(outputFileName, 'w') as file:
