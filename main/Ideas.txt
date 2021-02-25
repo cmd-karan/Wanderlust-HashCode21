@@ -18,7 +18,25 @@ carId - [0,2,4,5,6] (list of nodes to traverse)
 
 carID - (list of nodes to traverse)
 
+queue at a first streeet based on the carID
 
+Intersection - node
+question?
+
+For every node  -
+ check the output node from it
+ create this maping
+assign 1 sec to every output from the given node
+and send it to the schedule
+
+Submission - 
+
+Node 
+startNodeCount
+for startNode in graph[endNode]:
+    streetName -startNode, endNode
+    T = 1 (always)
+    
 
 make specify classes - cars, intersection, street
 
