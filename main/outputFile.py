@@ -1,10 +1,12 @@
 class OutputFile:
     
     def getOutput(self, simulationTime, intersectionCount, streetCount, scorePerCar, graph, edgeToNode, nodeToEdge, carIDMap):
-        return self.getOutputv1(simulationTime, intersectionCount, streetCount, scorePerCar, graph, edgeToNode, nodeToEdge, carIDMap,fileName, path)
+        output_file = open('output.txt','w')
+        content = self.getOutputv1(simulationTime, intersectionCount, streetCount, scorePerCar, graph, edgeToNode, nodeToEdge, carIDMap)
+        output_file.write(content)
 
     def streetWeight(self):
-        return 1
+        return '1'
     def getOutputv1(self, simulationTime, intersectionCount, streetCount, scorePerCar, graph, edgeToNode, nodeToEdge, carIDMap):
         """
         Node 

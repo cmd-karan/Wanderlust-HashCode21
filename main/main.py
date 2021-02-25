@@ -24,19 +24,25 @@ if __name__=="__main__":
     print("main called maybe")
     currDir = os.getcwd()
     
-    inputDir = os.path.join(currDir, "dataset")
-    outputDir = os.path.join(currDir, "output")
-    fileNames = list(os.listdir(inputDir))
-    for fileName in fileNames:
-        path = os.path.join(inputDir, fileName)
-        simulationTime, intersectionCount, streetCount, scorePerCar, graph, edgeToNode, nodeToEdge, carIDMap = inputFile.getInput()
+    #inputDir = os.path.join(currDir, "dataset")
+    #outputDir = os.path.join(currDir, "output")
+    #fileNames = list(os.listdir(inputDir))
+    #for fileName in fileNames:
+        #path = os.path.join(inputDir, fileName)
+        #simulationTime, intersectionCount, streetCount, scorePerCar, graph, edgeToNode, nodeToEdge, carIDMap = inputFile.getInput()
+        #print(inputFile.getInput())
         #logic.Logic.computation(simulationTime, intersectionCount, streetCount, scorePerCar, graph, edgeToNode, nodeToEdge, carIDMap)
-        s = outputFile.OutputFile.getOutput(simulationTime, intersectionCount, streetCount, scorePerCar, graph, edgeToNode, nodeToEdge, carIDMap)
-        outputFileName = os.path.join(outputDir,fileName+"_output.txt")
-        with open(outputFileName, 'w') as file:
-            file.write(s)
-    
+        #print(carIDMap)
+        #s = outputFile.OutputFile.getOutput(simulationTime, intersectionCount, streetCount, scorePerCar, graph, edgeToNode, nodeToEdge, carIDMap)
         
+        #outputFileName = os.path.join(outputDir,fileName+"_output.txt")
+        #with open(outputFileName, 'w') as file:
+            #file.write(s)
+
+    simulationTime, intersectionCount, streetCount, scorePerCar, graph, edgeToNode, nodeToEdge, carIDMap = inputFile.getInput()
+    outputFile.OutputFile().getOutput(simulationTime, intersectionCount, streetCount, scorePerCar, graph, edgeToNode, nodeToEdge, carIDMap)
+    
+    
 
         
         
