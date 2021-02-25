@@ -1,7 +1,9 @@
+import os
+os.getcwd()
 class OutputFile:
     
-    def getOutput(self, simulationTime, intersectionCount, streetCount, scorePerCar, graph, edgeToNode, nodeToEdge, carIDMap):
-        output_file = open('output.txt','w')
+    def getOutput(self, simulationTime, intersectionCount, streetCount, scorePerCar, graph, edgeToNode, nodeToEdge, carIDMap, current):
+        output_file = open('output_'+current+'.txt','w')
         content = self.getOutputv1(simulationTime, intersectionCount, streetCount, scorePerCar, graph, edgeToNode, nodeToEdge, carIDMap)
         output_file.write(content)
 
@@ -33,7 +35,7 @@ class OutputFile:
             res.append(len(graph[endNode]))
             for startNode in graph[endNode]:
                 streetName = nodeToEdge[(startNode, endNode)]
-                res.append(streetName+self.streetWeight())
+                res.append(streetName+' '+self.streetWeight())
 
         return "\n".join([str(elem) for elem in res])
         

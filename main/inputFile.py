@@ -1,5 +1,6 @@
 from collections import defaultdict
 import os
+os.getcwd()
 
 class Car:
     def __init__(self, streets):
@@ -25,9 +26,8 @@ class InputFile:
         self.graph = defaultdict()
         self.carIDMap = []
 
-    def setInputs(self):
-        os.getcwd()
-        input_file = open('dataset/a.txt','r')
+    def setInputs(self, current):
+        input_file = open('dataset/'+current+'.txt','r')
         line = input_file.readline().split()
         self.simulationTime = int(line[0])
         self.intersectionCount = int(line[1])
@@ -52,9 +52,9 @@ class InputFile:
             self.carIDMap.append(cur) 
             var += 1
 
-def getInput():
+def getInput(current):
     obj = InputFile()
-    obj.setInputs()
+    obj.setInputs(current)
     return obj.simulationTime, obj.intersectionCount, obj.streetCount, obj.scorePerCar, obj.graph, obj.edgeToNode, obj.nodeToEdge, obj.carIDMap
 
 #print(getInput())

@@ -38,9 +38,9 @@ if __name__=="__main__":
         #outputFileName = os.path.join(outputDir,fileName+"_output.txt")
         #with open(outputFileName, 'w') as file:
             #file.write(s)
-
-    simulationTime, intersectionCount, streetCount, scorePerCar, graph, edgeToNode, nodeToEdge, carIDMap = inputFile.getInput()
-    outputFile.OutputFile().getOutput(simulationTime, intersectionCount, streetCount, scorePerCar, graph, edgeToNode, nodeToEdge, carIDMap)
+    for current in ('a','b','c','d','e'):
+        simulationTime, intersectionCount, streetCount, scorePerCar, graph, edgeToNode, nodeToEdge, carIDMap = inputFile.getInput(current)
+        outputFile.OutputFile().getOutput(simulationTime, intersectionCount, streetCount, scorePerCar, graph, edgeToNode, nodeToEdge, carIDMap, current)
     
     
 
